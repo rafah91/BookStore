@@ -25,7 +25,7 @@ def add_books(n):
     images = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg']
     for x in range(n):
         Book.objects.create(
-            title = fake.text(max_nb_chars = 30) ,
+            title = fake.text(max_nb_chars = 10) ,
             publication_date= fake.date() ,
             image= f"bookimages/{images[random.randint(0,6)]}",
             price= round(random.uniform(19.99,99.99),2) ,
@@ -34,4 +34,21 @@ def add_books(n):
         
     print(f'{n} books was created successfully')
 
-add_books(977)
+
+
+def add_reviews(n):
+    fake = Faker()
+
+    for x in range(n):
+        Review.objects.create(
+            viewer_name = User.objects.get(id=random.randint(1,5)),
+            book = Book.objects.get(id=random.randint(1,1029)) , 
+            rating = random.randint(1,5) , 
+            content = fake.text(max_nb_chars=200)
+        )
+
+    print(f'{n} Reviews was created successfully')
+
+#add_authors()
+#add_books(977)
+add_reviews(3000)
