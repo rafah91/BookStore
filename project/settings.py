@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'books',
     #3d party app
     "taggit",
-    'pillow',
+    
 ]
 
 MIDDLEWARE = [
