@@ -32,50 +32,55 @@ BookStore is a project designed for book enthusiasts, providing a user-friendly 
 
 Getting started with BookStore is a simple process. Follow these steps to set up your book management system:
 
-1. **Clone the Repository**: Start by cloning the project repository:
+1.**Clone the Repository**: Begin by cloning the project repository:
+
+```bash
 git clone https://github.com/rafah91/BookStore.git
+```
 
-markdown
-Copy code
+2.**Navigate to the Project Directory**: Move into the project directory:
 
-2. **Navigate to the Project Directory**: Move into the project directory:
+```bash
 cd BookStore
+```
 
-mathematica
-Copy code
+3.**Create and Activate a Virtual Environment**: Set up a virtual environment and activate it:
 
-3. **Create and Activate a Virtual Environment**: Set up a virtual environment and activate it:
+```bash
 python -m venv venv
-source venv/bin/activate # On Windows, use venv\Scripts\activate
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
 
-markdown
-Copy code
+4.**Install Required Dependencies**: Install the necessary dependencies for the project:
 
-4. **Install Required Dependencies**: Install the necessary dependencies for the project:
+```bash
 pip install -r requirements.txt
+```
 
-markdown
-Copy code
+5.**Apply Database Migrations**: Apply database migrations to set up the database:
 
-5. **Apply Database Migrations**: Apply database migrations to set up the database:
+```bash
 python manage.py migrate
+```
 
-less
-Copy code
+6.**Create a Superuser Account**: Create a superuser account for administrative access:
 
-6. **Create a Superuser Account**: Create a superuser account for administrative access:
+```bash
 python manage.py createsuperuser
+```
 
-markdown
-Copy code
+7.**Start the Development Server**: Launch the development server:
 
-7. **Start the Development Server**: Launch the development server:
+```bash
 python manage.py runserver
+```
 
-vbnet
-Copy code
+8.**Access the Admin Panel**: Configure your book collection by accessing the admin panel at 
 
-8. **Access the Admin Panel**: Configure your book collection by accessing the admin panel at [http://localhost:8000/admin/](http://localhost:8000/admin/).
+```bash
+http://localhost:8000/admin/.
+```
+
 
 ## Using BookStore
 
