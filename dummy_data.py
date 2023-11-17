@@ -50,5 +50,5 @@ def add_reviews(n):
     print(f'{n} Reviews was created successfully')
 
 #add_authors()
-#add_books(977)
-add_reviews(3000)
+#add_books(18)
+#add_reviews(3000)
