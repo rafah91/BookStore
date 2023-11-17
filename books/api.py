@@ -15,7 +15,7 @@ class BookListAPI(generics.ListAPIView):
     search_fields = ['title', 'tags', 'publication_date']
     ordering_fields = ['price']
     filterset_class = BookFilter
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     pagination_class = MyPagination
 
 class BookDetailAPI(generics.RetrieveAPIView):
@@ -26,6 +26,10 @@ class AuthorListAPI(generics.ListAPIView):
     queryset = Author.objects.all()
     serializer_class = AuthorListSerializer
     pagination_class = MyPagination
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
+    filterset_fields = ['slug', 'name']
+    search_fields = ['name', 'birth_date']
+    ordering_fields = ['price']
 
 class AuthorDetailAPI(generics.RetrieveAPIView):
     queryset = Author.objects.all()
