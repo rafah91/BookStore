@@ -1,0 +1,9 @@
+{{author}}
+
+{% for author in author_list %}
+
+    <h4> <a href="/author/{{author.id}}">
+        {{author.name}}
+    </a> </h4> 
+
+    {% endfor %}

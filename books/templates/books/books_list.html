@@ -1,0 +1,9 @@
+{{books}}
+
+{% for books in books_list %}
+
+    <h4> <a href="/book/{{books.id}}">
+        {{book.title}}
+    </a> </h4> 
+
+    {% endfor %}

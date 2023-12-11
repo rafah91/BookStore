@@ -1,0 +1,5 @@
+-serializers:author - book - review - avg:count - rate
+-api:books - authors - settings - urls 
+-filter:settings - api 
+-pagination:filter - serializers
+-debug:settings - urls - views 

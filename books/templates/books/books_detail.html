@@ -1,0 +1,9 @@
+
+<h3> Book Title : {{Book.title}} </h3>
+
+
+<h5> Author : {{book.author}} </h5>
+{% csrf_token %}
+<p> {{book.biography}} </p>
+
+<img src="{{book.image.url}}" alt="">

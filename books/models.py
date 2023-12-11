@@ -21,7 +21,7 @@ class Author(models.Model):
     
 class Book(models.Model):
     title=models.CharField(_('Title'),max_length=200)
-    author=models.ForeignKey('Author',verbose_name=_('Author'),related_name='book_author',on_delete=models.SET_NULL,null=True,blank=True)
+    author=models.ForeignKey(Author,verbose_name=_('Author'),related_name='books',on_delete=models.SET_NULL,null=True,blank=True)
     publication_date=models.DateField(_('Puplication date'))
     image=models.ImageField(_('Image'),upload_to='bookimages')
     price=models.FloatField(_('Price'),)
@@ -35,7 +35,7 @@ class Book(models.Model):
         super(Book, self).save(*args, **kwargs)
     
 class Review(models.Model):
-    book=models.ForeignKey(Book,verbose_name=_('Book'),related_name='book_review',on_delete=models.CASCADE)
+    book=models.ForeignKey(Book,verbose_name=_('Book'),related_name='books_review',on_delete=models.CASCADE)
     viewer_name=models.ForeignKey(User,verbose_name=_('Viewer name'),related_name='review_author',on_delete=models.SET_NULL,null=True,blank=True)
     created_at=models.DateTimeField(_('Created at'),default=timezone.now)
     content=models.TextField(_('Content'),max_length=600)
